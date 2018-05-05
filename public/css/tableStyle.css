@@ -23,6 +23,12 @@ body {
 
 /*** Table Styles **/
 
+table{
+display: block;
+  height: 450px;
+  overflow-y: scroll;
+}
+
 
 th {
   color:#D5DDE5;;

@@ -7,6 +7,8 @@ const DB_URI="mongodb://localhost:27017/publicContracts";
 const bodyParser=require('body-parser');
 const router=express.Router();
 const  ObjectId=require('mongodb').ObjectId;
+var session = require('express-session');
+var cookieParser = require('cookie-parser');
 
 MongoClient.connect(DB_URI,(err,db)=>{
   if(err)
@@ -15,9 +17,16 @@ MongoClient.connect(DB_URI,(err,db)=>{
     return;
   }
   contracts=db.collection('contract');
+  users=db.collection('user');
   console.log('Connected to:'+DB_URI);
 
 });
+
+app.use(session({
+  secret:'secret',
+  saveUninitialized:true,
+  resave:true
+}));
 
 app.set('views',path.join(__dirname,'views'));
 app.set('view engine','ejs');
@@ -25,6 +34,7 @@ app.set('view engine','ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname,'public')));
+app.use(cookieParser());
 
 
 app.post('/contract/add',(req,res,next) =>{
@@ -44,9 +54,34 @@ app.post('/contract/add',(req,res,next) =>{
     {
       console.log(err);
     }
-    res.redirect('/');
+  res.redirect('../userIndex');
   })
 
+})
+
+app.post('/login',(req,res,next)=>{
+
+  users.findOne({email:req.body.email},{},function(err,user){
+    if(err)
+  {
+    console.log(err);
+    return res.status(500).send();
+  }
+  else{
+    if(user.email==req.body.email && user.password==req.body.password)
+    {
+      console.log("SUCCESS");
+      req.session.email=req.body.email;
+      console.log(req.body.email);
+      console.log("SESSION"+req.session.email);
+      
+      res.redirect('userIndex');
+    }
+    else{
+      res.render('login');
+    }
+  }
+  })
 })
 
 app.get('/',function(req,res){
@@ -60,8 +95,45 @@ app.get('/',function(req,res){
 });
 });
 
+
+app.get('/userIndex', (req, res) => {
+  contracts.find({}).toArray(function(err,docs)
+{
+  if(err)
+  {
+    console.log(err);
+  }
+  res.render('userIndex',{docs:docs});
+});
+ });
+
+
+ app.get('/logout',(req,res)=>{
+    req.session.destroy(function(err){
+       if(err){
+          console.log(err);
+       }else{
+           res.redirect('/');
+       }
+    });
+  
+  });
+
+
+
 app.get('/add', (req, res) => {
   res.render('add');
+ });
+
+ app.get('/login', (req, res) => {
+
+  var sess=req.session;
+  if(sess.email){
+    res.redirect('userIndex');
+  }
+else{
+  res.render('login');
+}
  });
 
 app.get('/contract/:id',function(req,res)
@@ -108,7 +180,7 @@ app.post('/contract/update/:id',(req,res,next) =>{
     {
       console.log(err);
     }
-    res.redirect('/');
+    res.redirect('../../userIndex');
   })
 })
 
@@ -118,9 +190,11 @@ app.get('/contract/delete/:id',(req,res,next) =>{
     {
       console.log(err);
     }
-    res.redirect('/');
+    res.redirect('../../userIndex');
   })
 })
+
+
 
 app.listen(3000,"localhost",(err)=>
 {

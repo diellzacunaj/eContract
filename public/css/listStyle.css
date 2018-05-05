@@ -1,0 +1,53 @@
+
+
+ul{
+    
+margin-left: -40px;
+
+}
+
+ul li {
+    background-color: snow;
+    padding:10px;
+    border-bottom:1px solid silver;
+}
+
+
+.wrapList{
+  margin-top: 30px;
+width: 100%;
+height: 400px;
+overflow: hidden;
+overflow-y: auto;
+}
+
+.col-md-3{
+    padding: 30px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a#shto{
+    font-size: 16px;
+}
+
+a#shto:hover{
+   background-color:  #b06a51;
+   color: white;
+ 
+}
+a#show:hover{
+color: green;
+}
+
+a#edit:hover{
+color: blue;
+    }
+
+ a#delete:hover{
+    color: red;
+}
+        

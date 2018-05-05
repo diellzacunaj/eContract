@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+  
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <link rel="stylesheet" type="text/css" href="/css/listStyle.css" />
+  <style>
+ body{
+   font-family: Montserrat-Regular;
+ }
+  </style>
+  <title>Lista e Kontratave</title>
+</head>
+<body>
+
+
+    <div class="wrap" id="wrap">
+        <div class="content">
+            <div class="header">
+              <img src="logo.jpg">
+              <h1>Komuna e Prishtines</h1>
+            </div>
+   
+      <h3>Lista e kontratave publike</h3>
+     
+      <div class="container">
+        <div style="float: right;margin: 20px;">
+         <a href="/add" id="shto" title="Shto"  class="btn btn-default" ><i class="fas fa-plus"></i> Shto kontrate te re</a>
+        </div>
+         <div class="wrapList">
+        <ul>
+            <% docs.map((doc)=>{ %>
+              <li>
+                <div class="row">
+                  <div class="col-md-9">
+                    <h4>Numri rendor:</h4>
+         <p><%= doc.nr_rendor_prokurorimit %></p></div>
+         <div class="col-md-3">
+            <div class="col-md-4">
+              <a href="/contract/<%= doc._id %>" id="show" title="Show"><i class="fas fa-eye"></i></a></div>
+            <div class="col-md-4">
+              <a href="/contract/edit/<%= doc._id %>" id="edit" title="Edit"><i class="fas fa-edit"></i>
+            </a></div>
+            <div class="col-md-4">
+              <a href="/contract/delete/<%= doc._id %>" id="delete" title="Delete"><i class="fas fa-trash-alt"></i>
+            </a></div>
+          </div>
+        </div>
+        </li>
+              <% }); %>
+</ul>
+</div>
+   
+    </div>
+    </div>
+    
+    <div class="footer"><a href="/logout">Logout</a></div>   
+    </div>     
+</div>
+</body>
+</html>
