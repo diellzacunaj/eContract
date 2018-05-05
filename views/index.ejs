@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="/css/tableStyle.css" />
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <style>
+    .fluid-container {
+     
+  
+      margin: 30px;
+      margin-top: 130px;
+    }
+  </style>
+
+  <title>Lista e Kontratave</title>
+</head>
+
+<body>
+ 
+<!-- ///////////////////////////////////////////// -->
+<header>
+  <img src="logo.jpg"/>
+  <h1>Komuna e Prishtines</h1>
+</header>
+<div class="fluid-container">
+    <!-- <form method="POST" action="/contract/add" onSubmit="alert('Kontrata e re u shtua me sukses ! );">
+      <div class="form-group">
+        <h1 id="heading">Shto kontratёn e re</h1>
+        <div class="wrap-input  bg1">
+          <h3>Prokurimi:</h3>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="numri_rendor_prokurimit">Nr. rendor i prokurimit</label>
+              <input id="numri_rendor_prokurimit" type="text"  required class="form-control" name="nr_rendor_prokurorimit" placeholder="Nr. rendor i prokurimit"></input>
+            </div>
+            <div class="col-md-6">
+              <label for="lloji_prokurimit">Lloji i prokurimit</label>
+              <input id="lloji_prokurimit" type="text" class="form-control" required name="Lloji_i_prokurorimit" placeholder="Lloji i prokurimit"></input>
+            </div>
+          </div><br/>
+          <div class="row">
+            <div class="col-md-12">
+              <label for="aktiviteti_prokurimit">Aktiviteti i prokurimit</label>
+              <input id="aktiviteti_prokurimit" type="text" class="form-control" required  name="aktiviteti_i_prokurorimit" placeholder="Aktiviteti i prokurimit"></input>
+            </div>
+          </div>
+        </div>
+        <div class="wrap-input  bg1">
+          <h3>Datat:</h3>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="data_inicimit_aktivitetit">Data e inicimit tё aktivitetit tё prokurimit</label>
+              <input id="data_inicimit_aktivitetit" type="date" class="form-control" required name="data_inicimit_aktivitetit"></input>
+            </div>
+            <div class="col-md-6">
+              <label for="data_publikimit_shpalljes">Data e publikimit tё shpalljes</label>
+              <br><br>
+              <input id="data_publikimit_shpalljes" type="date" class="form-control"required name="data_publikimit_shpallje"></input>
+            </div>
+          </div>
+          <br/>
+          <div class="row">
+            <div class="col-md-12">
+              <label for="">Data e nёnshkrimit tё kontratёs</label>
+              <input type="date" class="form-control" required name="data_nenshkrimit"></input>
+            </div>
+          </div><br/>
+          <label>Afatet pёr implementimin e kontratёs</label><br/>
+          <div class="row" style="align-items: baseline;">
+            <div class="col-md-1">
+              <label>Nga:</label>
+            </div>
+            <div class="col-md-5">
+              <input type="date" class="form-control" required name="data_fillimit_implementimit"></input>
+            </div>
+            <div class="col-md-1">
+              <label>Deri:</label>
+            </div>
+            <div class="col-md-5">
+              <input type="date" class="form-control" required name="data_mbarimit_implementimit"></input>
+            </div>
+          </div><br/>
+          <div class="row">
+            <div class="col-md-12">
+              <label>Data e pёrmbylljes sё kontratёs(data e pranimit tё pёrkohshёm/preliminar)</label>
+              <input type="date" class="form-control"required name="data_e_permbylljes_kontrates"></input>
+            </div>
+          </div>
+        </div>
+
+        <div class="wrap-input  bg1">
+          <h3>Çmimi dhe tё dhёnat e tjera:</h3>
+
+          <div class="row">
+            <div class="col-md-6">
+              <label>Çmimi i kontratёs(duke pёrfshirё tё gjitha taksat)</label>
+              <input type="text" class="form-control" required name="Cmimi_kontrates" placeholder="Cmimi i kontrates"></input>
+            </div>
+            <div class="col-md-6">
+              <label>Çmimi total i paguar</label>
+              <br><br>
+              <input type="text" class="form-control" required name="cmimi_total" placeholder="Cmimi total"></input>
+            </div>
+
+          </div><br/>
+          <div class="row">
+            <div class="col-md-12">
+              <label>Emri i tё cilit i ёshtё dhёnё kontrata</label>
+              <input type="text" class="form-control" required name="emri_kontratuesit" placeholder="Emri dhe Mbiemri"></input>
+            </div>
+          </div>
+        </div>
+    
+        <br/>
+        <div class="row">
+          <div class="col-md-6">
+            <!-- <button class="btn btn-block btn-lg btn-primary" type="submit" name="dergo">Dёrgo</button> -->
+          <!-- </div>
+          <div class="col-md-6">
+              <button class="btn btn-block btn-lg btn-primary" type="submit" name="shto">Shto</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  --> 
+
+
+
+ 
+  <div class="table-title">
+      <h3>Lista e kontratave publike</h3>
+      </div>
+      <div style="overflow-x:auto;">
+      <table  class="table .table-responsive">
+      <thead>
+      <tr>
+      <th class="text-left" scope="col">Nr. rendor</th>
+      <th class="text-left"scope="col">Lloji</th>
+      <th class="text-left"scope="col">Aktiviteti</th>
+      <th class="text-left"scope="col">Data e inicimit</th>
+      <th class="text-left"scope="col">Data e publikimit shpalljes</th>
+      <th class="text-left"scope="col">Data e nenshkrimit</th>
+      <th class="text-left"scope="col">Data fillimit te implementimit</th>
+      <th class="text-left"scope="col">Data mbarimit te implementimit</th>
+      <th class="text-left"scope="col">Data e permbylljes se kontrates</th>
+      <th class="text-left"scope="col">Cmimi i kontrates</th>
+      <th class="text-left"scope="col">Cmimi total</th>
+      <th class="text-left"scope="col">Emri i kompanise kontraktuese</th>
+      </tr>
+      </thead>
+      <tbody class="table-hover">
+          <% docs.map((doc)=>{ %>
+      <tr>
+      <td class="text-left"><%= doc.nr_rendor_prokurorimit %></td>
+      <td class="text-left"><%= doc.Lloji_i_prokurorimit %></td>
+      <td class="text-left"><%= doc.aktiviteti_i_prokurorimit %></td>
+      <td class="text-left"><%= doc.data_inicimit_aktivitetit %></td>
+      <td class="text-left"><%= doc.data_publikimit_shpallje %></td>
+      <td class="text-left"><%= doc.data_nenshkrimit %></td>
+      <td class="text-left"><%= doc.data_fillimit_implementimit %></td>
+      <td class="text-left"><%= doc.data_mbarimit_implementimit %></td>
+      <td class="text-left"><%= doc.data_e_permbylljes_kontrates %></td>
+      <td class="text-left"><%= doc.Cmimi_kontrates %>&euro;</td>
+      <td class="text-left"><%= doc.cmimi_total %>&euro;</td>
+      <td class="text-left"><%= doc.emri_kontratuesit %></td>
+      </tr>
+      <% }); %>
+      
+      </tbody>
+      </table>
+    </div>
+    </div>
+
+    <a href="/add">go</a>
+ 
+
+
+  <footer>
+
+  </footer>
+</body>
+
+</html>

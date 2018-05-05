@@ -1,0 +1,158 @@
+@font-face {
+  font-family: Montserrat-Regular;
+  src: url('fonts/Montserrat/Montserrat-Regular.ttf');
+}
+
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url('fonts/Montserrat/Montserrat-Bold.ttf');
+}
+
+@font-face {
+  font-family: Montserrat-SemiBold;
+  src: url('fonts/Montserrat/Montserrat-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: Montserrat-Medium;
+  src: url('fonts/Montserrat/Montserrat-Medium.ttf');
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 970px;
+  }
+}
+
+body, html {
+  background-color: #e6e6e6;
+  height: 100%;
+  margin: 0px;
+  font-family: Poppins-Regular, sans-serif;
+}
+
+input, select {
+  font-family: Montserrat-Regular;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  color: #555555;
+  line-height: 1.2;
+  padding-right: 15px;
+}
+
+.container{
+  margin-top: 60px;
+}
+.row {
+  padding-bottom: 10px;
+}
+
+form {
+  margin: 20px;
+  padding: 3em;
+  border: 1px solid #f7f7f7;
+  border-radius: 1em;
+  background-color: #fff;
+}
+
+.bg1 {
+  background-color: #f7f7f7;
+}
+
+.wrap-input {
+  width: 100%;
+  position: relative;
+  border: 1px solid #e6e6e6;
+  border-radius: 13px;
+  padding: 30px 40px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+input:focus:-moz-placeholder {
+  color: transparent;
+}
+
+input:focus::-moz-placeholder {
+  color: transparent;
+}
+
+input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+#heading {
+  display: block;
+  font-family: Montserrat-Bold;
+  font-size: 39px;
+  color: #007bff;
+  line-height: 1.2;
+  text-align: center;
+  padding-bottom: 59px;
+}
+ul {
+  list-style-type: none;
+}
+h3 {
+  font-family: Montserrat-SemiBold;
+  font-size: 20px;
+  color: #393939;
+  padding: 20px 0px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+label {
+  font-family: Montserrat-Medium;
+  font-size: 16px;
+  color: #393939;
+  line-height: 1.2;
+}
+
+button {
+  font-family: Montserrat-Medium;
+}
+ header{
+   position: absolute;
+   width: 100%;
+   top: 0;
+   background-color: black;
+   height: 130px;
+   text-align: center;
+   top: 0px;
+
+  
+ }
+header h1 {
+  position: relative;
+  text-transform: uppercase;
+  font-family: Montserrat-Medium;
+  color: #b06a51;
+  top: 20px;
+  
+}
+
+ header img{
+  float: left;
+margin: 20px;
+margin-left: 30px;
+ }
+ 
+
+ /* @media screen and (max-width: 360px) {
+  header  {
+    display: inline-block;
+    text-align: left;
+  }
+  header h1{
+    font-size: 24px;
+    display: block;
+    text-align: left;
+  }
+ 
+} */

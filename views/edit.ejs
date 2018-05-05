@@ -1,0 +1,187 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="main.css" />
+  <title>Edit To do</title>
+</head>
+<body>
+  <div class="container">
+    <h3 class="heading">Edit Todo</h3>
+    <form method="POST" action="/contract/update/<%= doc._id %>">
+      <div class="form-group">
+
+        <div class="row">
+          <div class="col-md-3">
+            <label>Todo Title:</label></div>
+          <div class="col-md-9">
+            <input type="text" name="title" class="form-control" placeholder="Add Title" value="<%= doc.title %>" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <label>Todo description:</label></div>
+          <div class="col-md-9">
+            <textarea rows="5" name="description" class="form-control" placeholder="Add Description"><%= doc.description %></textarea>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-9"></div>
+          <div class="col-md-3">
+            <button class="btn btn-block btn-lg btn-primary" type="submit">Update</button><br> </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <title>Ndrysho kontraten</title>
+</head>
+<body>
+
+    <div class="container">
+        <form method="POST" action="/contract/update/<%= doc._id %>" onSubmit="alert('Te dhenat u ndryshuan !');">
+          <div class="form-group">
+            <h1 id="heading">Ndrysho kontraten</h1>
+            <div class="wrap-input  bg1">
+              <h3>Prokurimi:</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="numri_rendor_prokurimit">Nr. rendor i prokurimit</label>
+                  <input id="numri_rendor_prokurimit" type="text" class="form-control" required name="nr_rendor_prokurorimit" placeholder="Nr. rendor i prokurimit" value="<%= doc.nr_rendor_prokurorimit %>" ></input>
+                </div>
+                <div class="col-md-6">
+                  <label for="lloji_prokurimit">Lloji i prokurimit</label>
+                  <input id="lloji_prokurimit" type="text" class="form-control" required name="Lloji_i_prokurorimit" placeholder="Lloji i prokurimit" value="<%= doc.Lloji_i_prokurorimit %>"></input>
+                </div>
+              </div><br/>
+              <div class="row">
+                <div class="col-md-12">
+                  <label for="aktiviteti_prokurimit">Aktiviteti i prokurimit</label>
+                  <input id="aktiviteti_prokurimit" type="text" class="form-control" required name="aktiviteti_i_prokurorimit" placeholder="Aktiviteti i prokurimit"   value="<%= doc.aktiviteti_i_prokurorimit%>" ></input>
+                </div>
+              </div>
+            </div>
+            <div class="wrap-input  bg1">
+              <h3>Datat:</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="data_inicimit_aktivitetit">Data e inicimit tё aktivitetit tё prokurimit</label>
+                  <input id="data_inicimit_aktivitetit" type="date" class="form-control" required name="data_inicimit_aktivitetit" value="<%= doc.data_inicimit_aktivitetit %>"></input>
+                </div>
+                <div class="col-md-6">
+                  <label for="data_publikimit_shpalljes">Data e publikimit tё shpalljes</label>
+                  <br><br>
+                  <input id="data_publikimit_shpalljes" type="date" class="form-control" required name="data_publikimit_shpallje" value="<%= doc.data_publikimit_shpallje %>"></input>
+                </div>
+              </div>
+              <br/>
+              <div class="row">
+                <div class="col-md-12">
+                  <label for="">Data e nёnshkrimit tё kontratёs</label>
+                  <input type="date" class="form-control" name="data_nenshkrimit" required value="<%= doc.data_nenshkrimit %>" ></input>
+                </div>
+              </div><br/>
+              <label>Afatet pёr implementimin e kontratёs</label><br/>
+              <div class="row" style="align-items: baseline;">
+                <div class="col-md-1">
+                  <label>Nga:</label>
+                </div>
+                <div class="col-md-5">
+                  <input type="date" class="form-control" name="data_fillimit_implementimit" required value="<%= doc.data_fillimit_implementimit %>"></input>
+                </div>
+                <div class="col-md-1">
+                  <label>Deri:</label>
+                </div>
+                <div class="col-md-5">
+                  <input type="date" class="form-control" name="data_mbarimit_implementimit" required value="<%= doc.data_mbarimit_implementimit %>"></input>
+                </div>
+              </div><br/>
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Data e pёrmbylljes sё kontratёs(data e pranimit tё pёrkohshёm/preliminar)</label>
+                  <input type="date" class="form-control" name="data_e_permbylljes_kontrates" required value="<%= doc.data_e_permbylljes_kontrates %>"></input>
+                </div>
+              </div>
+            </div>
+    
+            <div class="wrap-input  bg1">
+              <h3>Çmimi dhe tё dhёnat e tjera:</h3>
+    
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Çmimi i kontratёs(duke pёrfshirё tё gjitha taksat)</label>
+                  <input type="text" class="form-control" name="Cmimi_kontrates" required placeholder="Cmimi i kontrates" value="<%= doc.Cmimi_kontrates %>"></input>
+                </div>
+                <div class="col-md-6">
+                  <label>Çmimi total i paguar</label>
+                  <br><br>
+                  <input type="text" class="form-control" name="cmimi_total" required placeholder="Cmimi total" value="<%= doc.cmimi_total %>"></input>
+                </div>
+    
+              </div><br/>
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Emri i tё cilit i ёshtё dhёnё kontrata</label>
+                  <input type="text" class="form-control" name="emri_kontratuesit" required placeholder="Emri dhe Mbiemri"  value="<%= doc.emri_kontratuesit %>" ></input>
+                </div>
+              </div>
+            </div>
+        
+            <br/>
+            <div class="row">
+              <div class="col-md-6">
+                <!-- <button class="btn btn-block btn-lg btn-primary" type="submit" name="dergo">Dёrgo</button> -->
+              </div>
+              <div class="col-md-6">
+                  <button class="btn btn-block btn-lg btn-primary" onclick="return myFuction()" type="submit">Update</button><br> </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
