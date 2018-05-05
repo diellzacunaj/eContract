@@ -5,7 +5,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+    crossorigin="anonymous">
 
   <link rel="stylesheet" type="text/css" href="/css/tableStyle.css" />
   <link rel="stylesheet" type="text/css" href="/css/main.css" />
@@ -17,69 +18,94 @@
   </style>
   <title>Lista e Kontratave</title>
 </head>
+
 <body>
 
 
-    <div class="wrap" id="wrap">
-        <div class="content">
-            <div class="header">
-              <img src="logo.jpg">
-              <h1>Komuna e Prishtines</h1>
-            </div>
-
-<div class="fluid-container">
-  <div class="table-title">
-      <h3>Lista e kontratave publike</h3>
+  <div class="wrap" id="wrap">
+    <div class="content">
+      <div class="header">
+        <img src="logo.jpg">
+        <h1>Komuna e Prishtines</h1>
       </div>
-      <div style="overflow: hidden;overflow-x: auto;">
-      <table  class="table .table-responsive">
-      <thead>
-      <tr>
-      <th class="text-left" scope="col">Nr. rendor</th>
-      <th class="text-left"scope="col">Lloji</th>
-      <th class="text-left"scope="col">Aktiviteti</th>
-      <th class="text-left"scope="col">Data e inicimit</th>
-      <th class="text-left"scope="col">Data e publikimit shpalljes</th>
-      <th class="text-left"scope="col">Data e nenshkrimit</th>
-      <th class="text-left"scope="col">Data fillimit te implementimit</th>
-      <th class="text-left"scope="col">Data mbarimit te implementimit</th>
-      <th class="text-left"scope="col">Data e permbylljes se kontrates</th>
-      <th class="text-left"scope="col">Cmimi i kontrates</th>
-      <th class="text-left"scope="col">Cmimi total</th>
-      <th class="text-left"scope="col">Emri i kompanise kontraktuese</th>
-      </tr>
-      </thead>
-      <tbody class="table-hover">
-          <% docs.map((doc)=>{ %>
-      
-     
-      <tr onclick="location.href='/contract/<%= doc._id %>'">
-       
-      <td class="text-left"><%= doc.nr_rendor_prokurorimit %></td>
-      <td class="text-left"><%= doc.Lloji_i_prokurorimit %></td>
-      <td class="text-left"><%= doc.aktiviteti_i_prokurorimit %></td>
-      <td class="text-left"><%= doc.data_inicimit_aktivitetit %></td>
-      <td class="text-left"><%= doc.data_publikimit_shpallje %></td>
-      <td class="text-left"><%= doc.data_nenshkrimit %></td>
-      <td class="text-left"><%= doc.data_fillimit_implementimit %></td>
-      <td class="text-left"><%= doc.data_mbarimit_implementimit %></td>
-      <td class="text-left"><%= doc.data_e_permbylljes_kontrates %></td>
-      <td class="text-left"><%= doc.Cmimi_kontrates %>&euro;</td>
-      <td class="text-left"><%= doc.cmimi_total %>&euro;</td>
-      <td class="text-left"><%= doc.emri_kontratuesit %></td>
-   
-      </tr>
-    
-      <% }); %>
-      
-      </tbody>
-      </table>
-    </div>
-    </div>
 
-    <div class="footer"><a href="/login">Login </a></div>   
-    </div>     
-</div>
+      <div class="fluid-container">
+        <div class="table-title">
+          <h3>Lista e kontratave publike</h3>
+        </div>
+        <div style="overflow: hidden;overflow-x: auto;">
+          <table class="table .table-responsive">
+            <thead>
+              <tr>
+                <th class="text-left" scope="col">Nr. rendor</th>
+                <th class="text-left" scope="col">Lloji</th>
+                <th class="text-left" scope="col">Aktiviteti</th>
+                <th class="text-left" scope="col">Data e inicimit</th>
+                <th class="text-left" scope="col">Data e publikimit shpalljes</th>
+                <th class="text-left" scope="col">Data e nenshkrimit</th>
+                <th class="text-left" scope="col">Data fillimit te implementimit</th>
+                <th class="text-left" scope="col">Data mbarimit te implementimit</th>
+                <th class="text-left" scope="col">Data e permbylljes se kontrates</th>
+                <th class="text-left" scope="col">Cmimi i kontrates</th>
+                <th class="text-left" scope="col">Cmimi total</th>
+                <th class="text-left" scope="col">Emri i kompanise kontraktuese</th>
+              </tr>
+            </thead>
+            <tbody class="table-hover">
+              <% docs.map((doc)=>{ %>
+
+
+                <tr onclick="location.href='/contract/<%= doc._id %>'">
+
+                  <td class="text-left">
+                    <%= doc.nr_rendor_prokurorimit %>
+                  </td>
+                  <td class="text-left">
+                    <%= doc.Lloji_i_prokurorimit %>
+                  </td>
+                  <td class="text-left">
+                    <%= doc.aktiviteti_i_prokurorimit %>
+                  </td>
+                  <td class="text-left">
+                    <%= doc.data_inicimit_aktivitetit %>
+                  </td>
+                  <td class="text-left">
+                    <%= doc.data_publikimit_shpallje %>
+                  </td>
+                  <td class="text-left">
+                    <%= doc.data_nenshkrimit %>
+                  </td>
+                  <td class="text-left">
+                    <%= doc.data_fillimit_implementimit %>
+                  </td>
+                  <td class="text-left">
+                    <%= doc.data_mbarimit_implementimit %>
+                  </td>
+                  <td class="text-left">
+                    <%= doc.data_e_permbylljes_kontrates %>
+                  </td>
+                  <td class="text-left">
+                    <%= doc.Cmimi_kontrates %>&euro;</td>
+                  <td class="text-left">
+                    <%= doc.cmimi_total %>&euro;</td>
+                  <td class="text-left">
+                    <%= doc.emri_kontratuesit %>
+                  </td>
+
+                </tr>
+
+                <% }); %>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="footer">
+        <a href="/login">Login </a>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

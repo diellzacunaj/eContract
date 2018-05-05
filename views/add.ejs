@@ -5,27 +5,21 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+    crossorigin="anonymous">
 
   <link rel="stylesheet" type="text/css" href="/css/main.css" />
 
-  <!-- <script>
-    $(document).ready(function() {
-      $(".btn-primary").click(function() {
-        $(".collapse").collapse('toggle');
-      });
-    });
-  </script> -->
 
   <title>Shto kontraten</title>
 </head>
 
 <body>
- 
-<!-- ///////////////////////////////////////////// -->
 
-<div class="container">
-    <form method="POST" action="/contract/add" onSubmit="<script>alert('Kontrata e re u shtua me sukses ! );</script>" >
+
+
+  <div class="container">
+    <form method="POST" action="/contract/add" onSubmit="<script>alert('Kontrata e re u shtua me sukses ! );</script>">
       <div class="form-group">
         <h1 id="heading">Shto kontratёn e re</h1>
         <div class="wrap-input  bg1">
@@ -33,17 +27,18 @@
           <div class="row">
             <div class="col-md-6">
               <label for="numri_rendor_prokurimit">Nr. rendor i prokurimit</label>
-              <input id="numri_rendor_prokurimit" type="text"  required class="form-control" name="nr_rendor_prokurorimit" placeholder="Nr. rendor i prokurimit"></input>
+              <input id="numri_rendor_prokurimit" type="text" required class="form-control" name="nr_rendor_prokurorimit" placeholder="Nr. rendor i prokurimit"></input>
             </div>
             <div class="col-md-6">
               <label for="lloji_prokurimit">Lloji i prokurimit</label>
               <input id="lloji_prokurimit" type="text" class="form-control" required name="Lloji_i_prokurorimit" placeholder="Lloji i prokurimit"></input>
             </div>
-          </div><br/>
+          </div>
+          <br/>
           <div class="row">
             <div class="col-md-12">
               <label for="aktiviteti_prokurimit">Aktiviteti i prokurimit</label>
-              <input id="aktiviteti_prokurimit" type="text" class="form-control" required  name="aktiviteti_i_prokurorimit" placeholder="Aktiviteti i prokurimit"></input>
+              <input id="aktiviteti_prokurimit" type="text" class="form-control" required name="aktiviteti_i_prokurorimit" placeholder="Aktiviteti i prokurimit"></input>
             </div>
           </div>
         </div>
@@ -56,8 +51,8 @@
             </div>
             <div class="col-md-6">
               <label for="data_publikimit_shpalljes">Data e publikimit tё shpalljes</label>
-              <br><br>
-              <input id="data_publikimit_shpalljes" type="date" class="form-control"required name="data_publikimit_shpallje"></input>
+              <br>
+              <input id="data_publikimit_shpalljes" type="date" class="form-control" required name="data_publikimit_shpallje"></input>
             </div>
           </div>
           <br/>
@@ -66,8 +61,10 @@
               <label for="">Data e nёnshkrimit tё kontratёs</label>
               <input type="date" class="form-control" required name="data_nenshkrimit"></input>
             </div>
-          </div><br/>
-          <label>Afatet pёr implementimin e kontratёs</label><br/>
+          </div>
+          <br/>
+          <label>Afatet pёr implementimin e kontratёs</label>
+          <br/>
           <div class="row" style="align-items: baseline;">
             <div class="col-md-1">
               <label>Nga:</label>
@@ -81,11 +78,12 @@
             <div class="col-md-5">
               <input type="date" class="form-control" required name="data_mbarimit_implementimit"></input>
             </div>
-          </div><br/>
+          </div>
+          <br/>
           <div class="row">
             <div class="col-md-12">
               <label>Data e pёrmbylljes sё kontratёs(data e pranimit tё pёrkohshёm/preliminar)</label>
-              <input type="date" class="form-control"required name="data_e_permbylljes_kontrates"></input>
+              <input type="date" class="form-control" required name="data_e_permbylljes_kontrates"></input>
             </div>
           </div>
         </div>
@@ -96,15 +94,17 @@
           <div class="row">
             <div class="col-md-6">
               <label>Çmimi i kontratёs(duke pёrfshirё tё gjitha taksat)</label>
-              <input type="text" class="form-control" required name="Cmimi_kontrates" placeholder="Cmimi i kontrates"></input>
+              <input  type="text"  class="form-control" required name="Cmimi_kontrates" placeholder="Cmimi i kontrates"></input>
             </div>
             <div class="col-md-6">
               <label>Çmimi total i paguar</label>
-              <br><br>
-              <input type="text" class="form-control" required name="cmimi_total" placeholder="Cmimi total"></input>
+              <br>
+              <br>
+              <input type="text"  class="form-control" required name="cmimi_total" placeholder="Cmimi total"></input>
             </div>
 
-          </div><br/>
+          </div>
+          <br/>
           <div class="row">
             <div class="col-md-12">
               <label>Emri i tё cilit i ёshtё dhёnё kontrata</label>
@@ -112,21 +112,21 @@
             </div>
           </div>
         </div>
-    
+
         <br/>
         <div class="row">
           <div class="col-md-6">
             <!-- <button class="btn btn-block btn-lg btn-primary" type="submit" name="dergo">Dёrgo</button> -->
           </div>
           <div class="col-md-6">
-              <button class="btn btn-block btn-lg btn-primary" type="submit" name="shto">Shto</button>
+            <button class="btn btn-block btn-lg btn-primary" type="submit" name="shto">Shto</button>
           </div>
         </div>
       </div>
     </form>
- 
 
- 
+
+
   </div>
 </body>
 
